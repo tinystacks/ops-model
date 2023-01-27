@@ -4,8 +4,8 @@ info:
   version: '1.0'
   description: Hello!
 paths:
-  $ref: routes/index.yml#/paths
+  $ref: ./routes/index.yml#/paths
 components:
   schemas:
-    $ref: schemas/index.yml#/components/schemas
+    $ref: ./schemas/index.yml#/components/schemas
     

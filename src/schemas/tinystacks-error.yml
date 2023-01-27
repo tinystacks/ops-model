@@ -11,9 +11,7 @@ TinyStacksError:
     stack:
       type: string
     type:
-      anyOf:
-        - $ref: '#/TinyStacksErrorTypeEnum'
-        - type: string
+      $ref: '#/TinyStacksErrorTypeEnum'
 TinyStacksErrorTypeEnum:
   type: string
   enum:
