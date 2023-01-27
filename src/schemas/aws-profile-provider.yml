@@ -1,6 +1,6 @@
 AwsProfileProvider:
   allOf:
-  - $ref: 'provider.yml#/Provider'
+  - $ref: './provider.yml#/Provider'
   - type: object
     properties:
       credentials:

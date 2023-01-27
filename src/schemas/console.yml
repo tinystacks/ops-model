@@ -8,8 +8,8 @@ Console:
     pages:
       type: array
       items:
-        $ref: 'page.yml#/Page'
+        $ref: './page.yml#/Page'
     providers:
       type: array
       items:
-        $ref: 'provider.yml#/Provider'
+        $ref: './provider.yml#/Provider'

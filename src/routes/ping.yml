@@ -8,4 +8,4 @@ ping:
         content:
           text/plain:
             schema:
-              $ref:'../schemas/index.yml#/components/schemas/Ping'
+              $ref: '../schemas/ping.yml#/Ping'

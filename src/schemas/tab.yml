@@ -1,6 +1,6 @@
 Tab:
   allOf:
-    - $ref: 'widget.yml#/Widget'
+    - $ref: './widget.yml#/Widget'
     - type: object
       properties:
         tabDisplayName:
@@ -10,4 +10,4 @@ Tab:
             description: A list of widgets to display
             type: array
             items:
-              $ref: 'widget.yml#/Widget'
+              $ref: './widget.yml#/Widget'

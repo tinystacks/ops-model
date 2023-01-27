@@ -5,4 +5,4 @@ components:
       content:
         application/json:
           schema:
-            $ref: '../schemas/index.yml#/components/schemas/TinyStacksError'
+            $ref: '../schemas/tinystacks-error.yml#/TinyStacksError'

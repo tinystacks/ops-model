@@ -4,7 +4,7 @@ Page:
     widgets:
       type: array
       items:
-        $ref: 'widget.yml#/Widget'
+        $ref: './widget.yml#/Widget'
     route:
       description: A URL-safe route where this page can be accessed
       type: string
