@@ -1,0 +1,11 @@
+openapi: '3.0.0'
+info:
+  title: API Title
+  version: '1.0'
+  description: Hello!
+paths:
+  $ref: routes/index.yml#/paths
+components:
+  schemas:
+    $ref: schemas/index.yml#/components/schemas
+    

@@ -1,0 +1,25 @@
+TinyStacksError:
+  type: object
+  properties:
+    name:
+      type: string
+      default: TinyStacksError
+    message:
+      type: string
+    status:
+      type: number
+    stack:
+      type: string
+    type:
+      anyOf:
+        - $ref: '#/TinyStacksErrorTypeEnum'
+        - type: string
+TinyStacksErrorTypeEnum:
+  type: string
+  enum:
+    - Unauthorized
+    - Unauthenticated
+    - Validation
+    - NotFound
+    - Conflict
+    - InternalServerError

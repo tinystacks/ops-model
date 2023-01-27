@@ -1,0 +1,26 @@
+components:
+  schemas:
+    Console:
+      $ref: console.yml#/Console
+    Widget:
+      $ref: widget.yml#/Widget
+    Page:
+      $ref: page.yml#/Page
+    TabPanel:
+      $ref: tab-panel.yml#/TabPanel
+    Tab:
+      $ref: tab.yml#/Tab
+    Provider:
+      $ref: provider.yml#/Provider
+    AwsProfileProvider:
+      $ref: aws-profile-provider.yml#/AwsProfileProvider
+    AwsKeys:
+      $ref: aws-profile-provider.yml#/AwsKeys
+    AwsAssumedRole:
+      $ref: aws-profile-provider.yml#/AwsAssumedRole
+    LocalAwsProfile:
+      $ref: aws-profile-provider.yml#/LocalAwsProfile
+    TinyStacksError:
+      $ref: tinystacks-error.yml#/TinyStacksError
+    Ping:
+      $ref: ping.yml#/Ping

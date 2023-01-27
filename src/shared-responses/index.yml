@@ -1,0 +1,8 @@
+components:
+  responses:
+    TinyStacksError:
+      description: The specified resource was not found
+      content:
+        application/json:
+          schema:
+            $ref: '../schemas/index.yml#/components/schemas/TinyStacksError'

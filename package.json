@@ -2,10 +2,18 @@
   "name": "@tinystacks/ops-model",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "files": [
+    "dist",
+    "src"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "openapi -i ./src/index.yml -o ./dist --indent=2",
+    "clean-build": "rm -rf ./dist && npm run build"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "openapi-typescript-codegen": "^0.23.0"
+  }
 }

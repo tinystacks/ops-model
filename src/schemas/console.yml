@@ -1,0 +1,15 @@
+Console:
+  description: A console is a top-level construct that defines all  
+  type: object
+  properties:
+    name:
+      description: a human-readable name for your console.
+      type: string
+    pages:
+      type: array
+      items:
+        $ref: 'page.yml#/Page'
+    providers:
+      type: array
+      items:
+        $ref: 'provider.yml#/Provider'
