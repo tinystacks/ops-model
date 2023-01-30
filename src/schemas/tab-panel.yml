@@ -8,3 +8,5 @@ TabPanel:
           type: array
           items:
             $ref: './tab.yml#/Tab'
+      required:
+        - tabs

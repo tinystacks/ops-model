@@ -8,6 +8,8 @@ AwsProfileProvider:
           - $ref: '#/AwsKeys'
           - $ref: '#/AwsAssumedRole'
           - $ref: '#/LocalAwsProfile'
+    required:
+      - credentials
 AwsKeys:
   type: object
   properties:
@@ -18,6 +20,9 @@ AwsKeys:
     AwsSessionToken:
       description: Optional - specify this if you're using temporary credentials or an assumed role
       type: string
+  required:
+    - AwsAccessKeyId
+    - AwsSecretAccessKey
 AwsAssumedRole:
   type: object
   properties:
@@ -27,15 +32,22 @@ AwsAssumedRole:
     sessionName:
       description: The session name to use to assume the role
       type: string
-    primaryAwsProfileProvider:
-      description: The profile to use to assume the target role.
-      oneOf:
-        - $ref: '#/AwsKeys'
-        - $ref: '#/AwsAssumedRole'
-        - $ref: '#/LocalAwsProfile'
+  required:
+    - roleArn
+    - sessionName
+    # Commented out bc it doesn't make sense in this context.
+    # Is this supposed to be elsewhere?
+    # primaryAwsProfileProvider:
+    #   description: The profile to use to assume the target role.
+    #   oneOf:
+    #     - $ref: '#/AwsKeys'
+    #     - $ref: '#/AwsAssumedRole'
+    #     - $ref: '#/LocalAwsProfile'
 LocalAwsProfile:
   type: object
   properties:
     profileName:
       type: string
       description: The local aws credentials profile to use. This is usually specified in ~/.aws/credentials
+  required:
+    - profileName

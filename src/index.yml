@@ -6,6 +6,8 @@ info:
 paths:
   /ping:
     $ref: ./routes/ping.yml#/ping
+  /consoles:
+    $ref: ./routes/console.yml#/consoles
 components:
   schemas:
     Console:

@@ -13,3 +13,7 @@ Console:
       type: array
       items:
         $ref: './provider.yml#/Provider'
+  required:
+    - name
+    - pages
+    - providers
