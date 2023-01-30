@@ -1,11 +1,12 @@
-consoles:
+pages:
   get:
-    operationId: getConsoles
+    operationId: getPages
     tags:
-      - console
-    summary: Fetches the details for all of the Consoles in scope.
+      - page
+    summary: Fetches the details for all of the Pages in the specified Page.
     # description: This list only includes stacks owned by the authenticated user and groups to which the authenticated user belongs.
-    # parameters:
+    parameters:
+      - $ref: '../parameters/path-params.yml#/ConsoleName'
     #   - $ref: ../auth/model.yml#/components/parameters/Group
     #   - $ref: ../auth/model.yml#/components/parameters/Authorization
     # security:
@@ -13,46 +14,20 @@ consoles:
     #   - apiKeyAuth: []
     responses:
       '200':
-        description: A list of Consoles.
+        description: A list of Pages.
         content:
           application/json:
             schema:
               type: array
               items:
-                $ref: '../schemas/console.yml#/Console'
+                $ref: '../schemas/page.yml#/Page'
       default:
         $ref: '../shared-responses/index.yml#/TinyStacksError'
   post:
-    operationId: createConsole
+    operationId: createPage
     tags:
-      - console
-    summary: Creates a Console
-    # parameters:
-    #   - $ref: ../auth/model.yml#/components/parameters/Group
-    #   - $ref: ../auth/model.yml#/components/parameters/Authorization
-    # security:
-    #   - bearerAuth: []
-    #   - apiKeyAuth: []
-    requestBody:
-      required: true
-      content:
-        application/json:
-          schema:
-            $ref: '../schemas/console.yml#/Console'
-    responses:
-      '200':
-        description: the new Console
-        content:
-          application/json:
-            schema:
-              $ref: '../schemas/console.yml#/Console'
-      default:
-        $ref: '../shared-responses/index.yml#/TinyStacksError'
-  put:
-    operationId: updateConsole
-    tags:
-      - console
-    summary: Updates a Console
+      - page
+    summary: Creates a Page
     parameters:
       - $ref: '../parameters/path-params.yml#/ConsoleName'
     #   - $ref: ../auth/model.yml#/components/parameters/Group
@@ -65,23 +40,53 @@ consoles:
       content:
         application/json:
           schema:
-            $ref: '../schemas/console.yml#/Console'
+            $ref: '../schemas/page.yml#/Page'
     responses:
       '200':
-        description: the updated Console
+        description: the new Page
         content:
           application/json:
             schema:
-              $ref: '../schemas/console.yml#/Console'
+              $ref: '../schemas/page.yml#/Page'
+      default:
+        $ref: '../shared-responses/index.yml#/TinyStacksError'
+page:
+  put:
+    operationId: updatePage
+    tags:
+      - page
+    summary: Updates a Page
+    parameters:
+      - $ref: '../parameters/path-params.yml#/ConsoleName'
+      - $ref: '../parameters/path-params.yml#/PageRoute'
+    #   - $ref: ../auth/model.yml#/components/parameters/Group
+    #   - $ref: ../auth/model.yml#/components/parameters/Authorization
+    # security:
+    #   - bearerAuth: []
+    #   - apiKeyAuth: []
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '../schemas/page.yml#/Page'
+    responses:
+      '200':
+        description: the updated Page
+        content:
+          application/json:
+            schema:
+              $ref: '../schemas/page.yml#/Page'
       default:
         $ref: '../shared-responses/index.yml#/TinyStacksError'
   delete:
-    operationId: deleteConsole
+    operationId: deletePage
     tags:
-      - console
-    summary: Deletes a Console
+      - page
+    summary: Deletes a Page
     parameters:
       - $ref: '../parameters/path-params.yml#/ConsoleName'
+      - $ref: '../parameters/path-params.yml#/PageRoute'
     #   - $ref: ../auth/model.yml#/components/parameters/Group
     #   - $ref: ../auth/model.yml#/components/parameters/Authorization
     # security:
@@ -89,10 +94,10 @@ consoles:
     #   - apiKeyAuth: []
     responses:
       '200':
-        description: the deleted Console
+        description: the deleted Page
         content:
           application/json:
             schema:
-              $ref: '../schemas/console.yml#/Console'
+              $ref: '../schemas/page.yml#/Page'
       default:
         $ref: '../shared-responses/index.yml#/TinyStacksError'

@@ -1,0 +1,14 @@
+ConsoleName:
+  name: consoleName
+  in: path
+  description: Console name
+  required: true
+  schema:
+    type: string
+PageRoute:
+  name: pageRoute
+  in: path
+  description: Page route
+  required: true
+  schema:
+    type: string
