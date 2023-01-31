@@ -12,3 +12,10 @@ PageRoute:
   required: true
   schema:
     type: string
+WidgetId:
+  name: widgetId
+  in: path
+  description: Widget id
+  required: true
+  schema:
+    type: string

@@ -17,6 +17,7 @@ Widget:
     type:
       type: string
       description: This describes how this widget should be rendered. The "type" should be equivalent to the Object definition's name of the widget you are trying to render.
+    additionalProperties: {}
   required:
     - id
     - displayName

@@ -1,10 +1,9 @@
-pages:
-  get:
-    operationId: getPages
+widgets:
+  post:
+    operationId: createWidget
     tags:
-      - page
-    summary: Fetches the details for all of the Pages in the specified Console.
-    # description: This list only includes stacks owned by the authenticated user and groups to which the authenticated user belongs.
+      - widget
+    summary: Creates a Widget
     parameters:
       - $ref: '../parameters/path-params.yml#/ConsoleName'
     #   - $ref: ../auth/model.yml#/components/parameters/Group
@@ -12,53 +11,55 @@ pages:
     # security:
     #   - bearerAuth: []
     #   - apiKeyAuth: []
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '../schemas/widget.yml#/Widget'
     responses:
       '200':
-        description: A list of Pages.
+        description: the new Widget
+        content:
+          application/json:
+            schema:
+              $ref: '../schemas/widget.yml#/Widget'
+      default:
+        $ref: '../shared-responses/index.yml#/TinyStacksError'
+widget:
+  get:
+    operationId: getWidget
+    tags:
+      - widget
+    summary: Fetches the details for the specified Widget.
+    # description: This list only includes stacks owned by the authenticated user and groups to which the authenticated user belongs.
+    parameters:
+      - $ref: '../parameters/path-params.yml#/ConsoleName'
+      - $ref: '../parameters/path-params.yml#/WidgetId'
+    #   - $ref: ../auth/model.yml#/components/parameters/Group
+    #   - $ref: ../auth/model.yml#/components/parameters/Authorization
+    # security:
+    #   - bearerAuth: []
+    #   - apiKeyAuth: []
+    responses:
+      '200':
+        description: A fully hydrated Widget.
         content:
           application/json:
             schema:
               type: array
               items:
-                $ref: '../schemas/page.yml#/Page'
+                $ref: '../schemas/widget.yml#/Widget'
       default:
         $ref: '../shared-responses/index.yml#/TinyStacksError'
-  post:
-    operationId: createPage
-    tags:
-      - page
-    summary: Creates a Page
-    parameters:
-      - $ref: '../parameters/path-params.yml#/ConsoleName'
-    #   - $ref: ../auth/model.yml#/components/parameters/Group
-    #   - $ref: ../auth/model.yml#/components/parameters/Authorization
-    # security:
-    #   - bearerAuth: []
-    #   - apiKeyAuth: []
-    requestBody:
-      required: true
-      content:
-        application/json:
-          schema:
-            $ref: '../schemas/page.yml#/Page'
-    responses:
-      '200':
-        description: the new Page
-        content:
-          application/json:
-            schema:
-              $ref: '../schemas/page.yml#/Page'
-      default:
-        $ref: '../shared-responses/index.yml#/TinyStacksError'
-page:
   put:
-    operationId: updatePage
+    operationId: updateWidget
     tags:
-      - page
-    summary: Updates a Page
+      - widget
+    summary: Updates a Widget
     parameters:
       - $ref: '../parameters/path-params.yml#/ConsoleName'
-      - $ref: '../parameters/path-params.yml#/PageRoute'
+      - $ref: '../parameters/path-params.yml#/WidgetId'
     #   - $ref: ../auth/model.yml#/components/parameters/Group
     #   - $ref: ../auth/model.yml#/components/parameters/Authorization
     # security:
@@ -69,24 +70,24 @@ page:
       content:
         application/json:
           schema:
-            $ref: '../schemas/page.yml#/Page'
+            $ref: '../schemas/widget.yml#/Widget'
     responses:
       '200':
-        description: the updated Page
+        description: the updated Widget
         content:
           application/json:
             schema:
-              $ref: '../schemas/page.yml#/Page'
+              $ref: '../schemas/widget.yml#/Widget'
       default:
         $ref: '../shared-responses/index.yml#/TinyStacksError'
   delete:
-    operationId: deletePage
+    operationId: deleteWidget
     tags:
-      - page
-    summary: Deletes a Page
+      - widget
+    summary: Deletes a Widget
     parameters:
       - $ref: '../parameters/path-params.yml#/ConsoleName'
-      - $ref: '../parameters/path-params.yml#/PageRoute'
+      - $ref: '../parameters/path-params.yml#/WidgetId'
     #   - $ref: ../auth/model.yml#/components/parameters/Group
     #   - $ref: ../auth/model.yml#/components/parameters/Authorization
     # security:
@@ -94,10 +95,10 @@ page:
     #   - apiKeyAuth: []
     responses:
       '200':
-        description: the deleted Page
+        description: the deleted Widget
         content:
           application/json:
             schema:
-              $ref: '../schemas/page.yml#/Page'
+              $ref: '../schemas/widget.yml#/Widget'
       default:
         $ref: '../shared-responses/index.yml#/TinyStacksError'

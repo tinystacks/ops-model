@@ -12,6 +12,10 @@ paths:
     $ref: ./routes/page.yml#/pages
   /consoles/{consoleName}/pages/{pageRoute}:
     $ref: ./routes/page.yml#/page
+  /consoles/{consoleName}/widgets:
+    $ref: ./routes/widget.yml#/widgets
+  /consoles/{consoleName}/widgets/{widgetId}:
+    $ref: ./routes/widget.yml#/widget
 components:
   parameters:
     ConsoleName:
