@@ -1,13 +1,15 @@
 Page:
   type: object
   properties:
-    widgets:
+    id:
+      type: string
+    widgetIds: 
       type: array
-      items:
-        $ref: './widget.yml#/Widget'
+      items: 
+        type: string
     route:
       description: A URL-safe route where this page can be accessed
       type: string
   required:
-    - widgets
+    - widgetIds
     - route

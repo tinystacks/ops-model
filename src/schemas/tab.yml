@@ -6,11 +6,10 @@ Tab:
         tabDisplayName:
           description: A human readable, non-unique name to be displayed
           type: string
-        widgets:
-          description: A list of widgets to display
+        widgetIds: 
           type: array
-          items:
-            $ref: './widget.yml#/Widget'
+          items: 
+            type: string
       required:
         - tabDisplayName
-        - widgets
+        - widgetIds

@@ -9,6 +9,10 @@ Console:
       type: array
       items:
         $ref: './page.yml#/Page'
+    widgets:
+       type: array
+       items:
+         $ref: './widget.yml#/Widget'
     providers:
       type: array
       items:
