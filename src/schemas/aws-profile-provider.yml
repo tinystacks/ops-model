@@ -32,17 +32,16 @@ AwsAssumedRole:
     sessionName:
       description: The session name to use to assume the role
       type: string
+    primaryAwsProfileProvider:
+      description: The profile to use to assume the target role.
+      oneOf:
+        - $ref: '#/AwsKeys'
+        - $ref: '#/AwsAssumedRole'
+        - $ref: '#/LocalAwsProfile'
   required:
     - roleArn
     - sessionName
-    # Commented out bc it doesn't make sense in this context.
-    # Is this supposed to be elsewhere?
-    # primaryAwsProfileProvider:
-    #   description: The profile to use to assume the target role.
-    #   oneOf:
-    #     - $ref: '#/AwsKeys'
-    #     - $ref: '#/AwsAssumedRole'
-    #     - $ref: '#/LocalAwsProfile'
+    - primaryAwsProfileProvider
 LocalAwsProfile:
   type: object
   properties:
