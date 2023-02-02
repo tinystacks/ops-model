@@ -7,16 +7,20 @@ Widget:
     displayName:
       description: A human-readable display name, usually used to title a widget
       type: string
+    type:
+      type: string
+      description: This describes how this widget should be rendered. The "type" should be equivalent to the Object definition's name of the widget you are trying to render.
+    provider:
+      $ref: './provider.yml#/Provider'
     showDisplayName:
       description: Whether to show the display name
       type: boolean
     description:
       type: string
     showDescription:
-      type: string
-    type:
-      type: string
-      description: This describes how this widget should be rendered. The "type" should be equivalent to the Object definition's name of the widget you are trying to render.
+      description: Whether to show the description
+      type: boolean
+
     additionalProperties: {}
   required:
     - id
