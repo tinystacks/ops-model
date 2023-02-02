@@ -1,17 +1,16 @@
 Console:
   name: TinyStacks example
   providers:
-    - AwsProfileProvider:
-        id: AwsLocalProvider
-        credentials:
-          profileName: ts-dev
+    - id: AwsLocalProvider
+      type: AwsProfileProvider
+      credentials:
+        profileName: ts-dev
   pages:
-    - Page:
-        route: /
-        id: main-page
-        widgetIds: 
-          - primaryServiceHealth
-          - main-page-tab-panel
+    - route: /
+      id: main-page
+      widgetIds: 
+        - primaryServiceHealth
+        - main-page-tab-panel
   widgets:
     - type: "AwsCloudWatchMetricGraph"
       id: primaryServiceHealth

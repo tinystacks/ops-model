@@ -4,5 +4,8 @@ Provider:
     id:
       description: A unique ID for this provider. Your console is not valid if providers share an ID. These IDs are referenced in widgets
       type: string
+    type:
+      description: The type of provider; the provider plugin's name.
+      type: string
   required:
     - id
