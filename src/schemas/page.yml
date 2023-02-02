@@ -10,3 +10,6 @@ Page:
     route:
       description: A URL-safe route where this page can be accessed
       type: string
+  required:
+    - widgetIds
+    - route

@@ -17,3 +17,12 @@ Console:
       type: array
       items:
         $ref: './provider.yml#/Provider'
+    dependencies:
+      type: object
+      additionalProperties:
+        type: string
+  required:
+    - name
+    - pages
+    - providers
+    - widgets
