@@ -52,7 +52,6 @@ Console:
         unit: m
     SynthEcsServiceDeployments_1:
       type: "AwsEcsSeviceSummary"
-      id: synth-ecs-service-deployments-1
       displayName: Service Logs
       awsProviderId: AwsLocalProvider
       clusterName: cdk-synth-cluster
