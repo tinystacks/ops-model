@@ -16,7 +16,7 @@ Console:
       type: "AwsCloudWatchMetricGraph"
       displayName: Service Health (system memory)
       provider: 
-        - $ref: '#/Console/providers/AwsLocalProvider'
+        $ref: '#/Console/providers/AwsLocalProvider'
       showTimeRangeSelector: false
       showPeriodSelector: false
       showStatisticSelector: false
@@ -47,7 +47,7 @@ Console:
       type: "AwsCloudWatchLogViewer"
       displayName: Service Logs
       provider: 
-        - $ref: '#/Console/providers/AwsLocalProvider'
+        $ref: '#/Console/providers/AwsLocalProvider'
       logGroupId: TinyStacks-CustomerStackManagementService-cdksynthtstaskcdksynthcontainerLogGroup0B5FD78A-6nRF4fBxmCGy
       defaultTimeRange:
         time: 5
@@ -56,14 +56,14 @@ Console:
       type: "AwsEcsSeviceSummary"
       displayName: Service Logs
       provider: 
-        - $ref: '#/Console/providers/AwsLocalProvider'
+        $ref: '#/Console/providers/AwsLocalProvider'
       clusterName: cdk-synth-cluster
       serviceName: tinystacks-service
     SynthEcsServiceDeployments_2:
       type: "AwsEcsServiceDeployments"
       displayName: Service Logs
       provider: 
-        - $ref: '#/Console/providers/AwsLocalProvider'
+        $ref: '#/Console/providers/AwsLocalProvider'
       clusterName: cdk-synth-cluster
       serviceName: tinystacks-service
       showTaskDetails: true
@@ -77,7 +77,7 @@ Console:
         - scaling
         - latency
       provider: 
-        - $ref: '#/Console/providers/AwsLocalProvider'
+        $ref: '#/Console/providers/AwsLocalProvider'
       showTaskDetails: true
       showPermissions: true
       tabbedView: false
