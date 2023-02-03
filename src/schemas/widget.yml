@@ -9,8 +9,8 @@ Widget:
     type:
       type: string
       description: This describes how this widget should be rendered. The "type" should be equivalent to the Object definition's name of the widget you are trying to render.
-    provider:
-      $ref: './provider.yml#/Provider'
+    providerId:
+      type: string
     showDisplayName:
       description: Whether to show the display name
       type: boolean
@@ -22,7 +22,7 @@ Widget:
 
     additionalProperties: {}
   required:
-    - provider
+    - providerId
     - displayName
     - type
   #TODO navigation
