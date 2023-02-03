@@ -1,7 +1,7 @@
 Page:
   type: object
   properties:
-    id:
+    id: 
       type: string
     widgetIds: 
       type: array

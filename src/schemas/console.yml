@@ -6,16 +6,16 @@ Console:
       description: a human-readable name for your console.
       type: string
     pages:
-      type: array
-      items:
+      type: object
+      additionalProperties:
         $ref: './page.yml#/Page'
     widgets:
-       type: array
-       items:
-         $ref: './widget.yml#/Widget'
+      type: object
+      additionalProperties:
+        $ref: './widget.yml#/Widget'
     providers:
-      type: array
-      items:
+      type: object
+      additionalProperties:
         $ref: './provider.yml#/Provider'
     dependencies:
       type: object

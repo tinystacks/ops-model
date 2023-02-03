@@ -1,8 +1,7 @@
 Widget:
   type: object
   properties:
-    id:
-      description: A unique ID for this widget. Your console is not valid if widgets share an ID
+    id: 
       type: string
     displayName:
       description: A human-readable display name, usually used to title a widget
@@ -10,8 +9,8 @@ Widget:
     type:
       type: string
       description: This describes how this widget should be rendered. The "type" should be equivalent to the Object definition's name of the widget you are trying to render.
-    provider:
-      $ref: './provider.yml#/Provider'
+    providerId:
+      type: string
     showDisplayName:
       description: Whether to show the display name
       type: boolean
@@ -23,7 +22,7 @@ Widget:
 
     additionalProperties: {}
   required:
-    - id
+    - providerId
     - displayName
     - type
   #TODO navigation
