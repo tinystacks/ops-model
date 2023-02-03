@@ -1,9 +1,6 @@
 Widget:
   type: object
   properties:
-    id:
-      description: A unique ID for this widget. Your console is not valid if widgets share an ID
-      type: string
     displayName:
       description: A human-readable display name, usually used to title a widget
       type: string
@@ -23,7 +20,7 @@ Widget:
 
     additionalProperties: {}
   required:
-    - id
+    - provider
     - displayName
     - type
   #TODO navigation
