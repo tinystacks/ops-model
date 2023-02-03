@@ -3,7 +3,7 @@ Page:
   properties:
     id: 
       type: string
-    widgets: 
+    widgetIds: 
       type: array
       items: 
         type: string

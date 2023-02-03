@@ -6,7 +6,7 @@ Tab:
         tabDisplayName:
           description: A human readable, non-unique name to be displayed
           type: string
-        widgets: 
+        widgetIds: 
           type: array
           items: 
             type: string
