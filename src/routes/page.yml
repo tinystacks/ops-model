@@ -58,7 +58,7 @@ page:
     summary: Updates a Page
     parameters:
       - $ref: '../parameters/path-params.yml#/ConsoleName'
-      - $ref: '../parameters/path-params.yml#/PageRoute'
+      - $ref: '../parameters/path-params.yml#/PageId'
     #   - $ref: ../auth/model.yml#/components/parameters/Group
     #   - $ref: ../auth/model.yml#/components/parameters/Authorization
     # security:
@@ -86,7 +86,7 @@ page:
     summary: Deletes a Page
     parameters:
       - $ref: '../parameters/path-params.yml#/ConsoleName'
-      - $ref: '../parameters/path-params.yml#/PageRoute'
+      - $ref: '../parameters/path-params.yml#/PageId'
     #   - $ref: ../auth/model.yml#/components/parameters/Group
     #   - $ref: ../auth/model.yml#/components/parameters/Authorization
     # security:

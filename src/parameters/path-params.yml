@@ -5,10 +5,10 @@ ConsoleName:
   required: true
   schema:
     type: string
-PageRoute:
-  name: pageRoute
+PageId:
+  name: pageId
   in: path
-  description: Page route
+  description: Page id
   required: true
   schema:
     type: string

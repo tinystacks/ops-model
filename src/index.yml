@@ -10,7 +10,7 @@ paths:
     $ref: ./routes/console.yml#/consoles
   /consoles/{consoleName}/pages:
     $ref: ./routes/page.yml#/pages
-  /consoles/{consoleName}/pages/{pageRoute}:
+  /consoles/{consoleName}/pages/{pageId}:
     $ref: ./routes/page.yml#/page
   /consoles/{consoleName}/widgets:
     $ref: ./routes/widget.yml#/widgets
