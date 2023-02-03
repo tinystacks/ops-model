@@ -1,7 +1,9 @@
 Page:
   type: object
   properties:
-    widgetIds: 
+    id: 
+      type: string
+    widgets: 
       type: array
       items: 
         type: string
@@ -9,5 +11,5 @@ Page:
       description: A URL-safe route where this page can be accessed
       type: string
   required:
-    - widgetIds
+    - widgets
     - route

@@ -1,6 +1,8 @@
 Widget:
   type: object
   properties:
+    id: 
+      type: string
     displayName:
       description: A human-readable display name, usually used to title a widget
       type: string

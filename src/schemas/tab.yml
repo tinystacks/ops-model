@@ -6,10 +6,10 @@ Tab:
         tabDisplayName:
           description: A human readable, non-unique name to be displayed
           type: string
-        widgetIds: 
+        widgets: 
           type: array
           items: 
             type: string
       required:
         - tabDisplayName
-        - widgetIds
+        - widgets

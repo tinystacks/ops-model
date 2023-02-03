@@ -8,7 +8,7 @@ Console:
   pages:
     MainPage:
       route: /
-      widgetIds: 
+      widgets: 
         - $ref: '#/Console/widgets/PrimaryServiceHealth'
         - $ref: '#/Console/widgets/MainPageTabPanel'
   widgets:
@@ -34,11 +34,11 @@ Console:
       tabs:
         LogsTab:
           tabDisplayName: Logs
-          widgetIds: 
+          widgets: 
             - $ref: '#/Console/widgets/ServiceLogsContainer'
         EcsTab:
           tabDisplayName: ECS
-          widgetIds: 
+          widgets: 
             - $ref: '#/Console/widgets/SynthEcsServiceDeployments_1'
             - $ref: '#/Console/widgets/SynthEcsServiceDeployments_2'
             - $ref: '#/Console/widgets/SynthEcsServiceDeployments_3'
