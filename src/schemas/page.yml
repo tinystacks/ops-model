@@ -11,5 +11,5 @@ Page:
       description: A URL-safe route where this page can be accessed
       type: string
   required:
-    - widgets
+    - widgetIds
     - route
