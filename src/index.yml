@@ -45,4 +45,10 @@ components:
       $ref: ./schemas/tinystacks-error.yml#/TinyStacksError
     Ping:
       $ref: ./schemas/ping.yml#/Ping
+    YamlWidget:
+      $ref: ./schemas/yaml-widget.yml#/YamlWidget
+    YamlPage:
+      $ref: ./schemas/yaml-page.yml#/YamlPage
+    Config:
+      $ref: ./schemas/config.yml#/Config
     

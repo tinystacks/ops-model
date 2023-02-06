@@ -1,0 +1,11 @@
+YamlPage:
+  type: object
+  properties:
+    route:
+      type: string
+    widgets:
+      type: array
+      items:
+        $ref: './yaml-widget.yml#/YamlWidget'
+  required:
+    - route
