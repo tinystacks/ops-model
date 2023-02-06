@@ -9,7 +9,7 @@
   ],
   "scripts": {
     "build": "npm run generate && tsc && node ./scripts/transpile-json-schema.js",
-    "generate": "openapi -i ./src/index.yml -o ./gen --indent=2  --exportSchemas true",
+    "generate": "openapi -i ./src/index.yml -o ./gen --indent=2",
     "clean-build": "rm -rf *.tgz && rm -rf ./dist && rm -rf ./gen && npm run build",
     "prepack": "npm run clean-build"
   },
