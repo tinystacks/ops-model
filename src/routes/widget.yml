@@ -47,9 +47,7 @@ widget:
         content:
           application/json:
             schema:
-              type: array
-              items:
-                $ref: '../schemas/widget.yml#/Widget'
+              $ref: '../schemas/widget.yml#/Widget'
       default:
         $ref: '../shared-responses/index.yml#/TinyStacksError'
   put:
