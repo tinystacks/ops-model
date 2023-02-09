@@ -33,7 +33,7 @@ components:
       $ref: ./schemas/tab.yml#/Tab
     Provider:
       $ref: ./schemas/provider.yml#/Provider
-    AwsProfileProvider:
+    AwsCredentialsProvider:
       $ref: ./schemas/aws-credentials-provider.yml#/AwsCredentialsProvider
     AwsKeys:
       $ref: ./schemas/aws-credentials-provider.yml#/AwsKeys
