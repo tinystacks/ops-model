@@ -1,0 +1,29 @@
+Config:
+  type: object
+  properties:
+    Console: 
+      type: object
+      properties:
+        name:
+          type: string
+        providers:
+          type: object
+          additionalProperties:
+            $ref: './provider.yml#/Provider'
+        dependencies:
+          type: object
+          additionalProperties:
+            type: string
+        pages:
+          type: object
+          additionalProperties:
+            $ref: './yaml-page.yml#/YamlPage'
+        widgets:
+          type: object
+          additionalProperties:
+            $ref: './yaml-widget.yml#/YamlWidget'
+      required:
+        - name
+  required:
+    - Console
+        
