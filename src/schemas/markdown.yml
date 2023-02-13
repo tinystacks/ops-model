@@ -1,0 +1,10 @@
+Markdown:
+  allOf:
+    - $ref: './widget.yml#/Widget'
+    - type: object
+      properties:
+        text:
+          description: Markdown text to display
+          type: string
+      required:
+        - text
