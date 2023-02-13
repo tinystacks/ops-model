@@ -51,4 +51,6 @@ components:
       $ref: ./schemas/yaml-page.yml#/YamlPage
     Config:
       $ref: ./schemas/config.yml#/Config
+    Markdown:
+      $ref: ./schemas/markdown.yml#/Markdown
     
