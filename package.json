@@ -1,12 +1,16 @@
 {
   "name": "@tinystacks/ops-model",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "dist/index.js",
   "files": [
     "dist",
     "src"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tinystacks/ops-model.git"
+  },
   "scripts": {
     "build": "npm run generate && tsc && node ./scripts/transpile-json-schema.js",
     "generate": "openapi -i ./src/index.yml -o ./gen --indent=2 --name OpsApiClient",
