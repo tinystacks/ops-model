@@ -1,7 +1,12 @@
 Widget:
+  description: A widget is an object that is passed in and out of the API. It is used to serialize the complex and
+    resolved widgets into only the information needed by the API and frontend to fetch data and render the widget,
+    respectively. The main difference between this object and YamlWidget is that this object does not carry over
+    resolved references to providers and children.
   type: object
   properties:
-    id: 
+    id:
+      description: Unique Id for this widget.
       type: string
     displayName:
       description: A human-readable display name, usually used to title a widget
@@ -9,20 +14,28 @@ Widget:
     type:
       type: string
       description: This describes how this widget should be rendered. The "type" should be equivalent to the Object definition's name of the widget you are trying to render.
-    providerId:
-      type: string
-    showDisplayName:
-      description: Whether to show the display name
-      type: boolean
+    providerIds:
+      type: array
+      items:
+        type: string
+    childrenIds:
+      type: array
+      items:
+        type: string
     description:
       type: string
-    showDescription:
-      description: Whether to show the description
-      type: boolean
-
+    displayOptions:
+      type: object
+      properties:
+        showDisplayName:
+          description: Whether to show the display name
+          type: boolean
+        showDescription:
+          description: Whether to show the description
+          type: boolean
     additionalProperties: {}
   required:
-    - providerId
+    - id
     - displayName
     - type
   #TODO navigation

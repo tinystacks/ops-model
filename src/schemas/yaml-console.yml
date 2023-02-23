@@ -1,0 +1,28 @@
+YamlConsole:
+  description: A console is a top-level construct that defines all  
+  type: object
+  properties:
+    name:
+      description: a human-readable name for your console.
+      type: string
+    pages:
+      type: object
+      additionalProperties:
+        $ref: './yaml-page.yml#/YamlPage'
+    widgets:
+      type: object
+      additionalProperties:
+        $ref: './yaml-widget.yml#/YamlWidget'
+    providers:
+      type: object
+      additionalProperties:
+        $ref: './yaml-provider.yml#/YamlProvider'
+    dependencies:
+      type: object
+      additionalProperties:
+        type: string
+  required:
+    - name
+    - pages
+    - providers
+    - widgets

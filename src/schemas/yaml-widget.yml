@@ -8,19 +8,27 @@ YamlWidget:
       displayName:
         description: A human-readable display name, usually used to title a widget
         type: string
-      provider:
+      providers:
+        type: array
+        items:
           $ref: './provider.yml#/Provider'
-      showDisplayName:
-        description: Whether to show the display name
-        type: boolean
+      children:
+        type: array
+        items:
+          $ref: '#/YamlWidget'
+      displayOptions:
+        type: object
+        properties:
+          showDisplayName:
+            description: Whether to show the display name
+            type: boolean
+          showDescription:
+            description: Whether to show the description
+            type: boolean
       description:
         type: string
-      showDescription:
-        description: Whether to show the description
-        type: boolean
     required:
       - type
       - displayName
-      - provider
   - type: object
     additionalProperties: {}
