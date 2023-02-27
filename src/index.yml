@@ -17,6 +17,16 @@ paths:
   /consoles/{consoleName}/widgets/{widgetId}:
     $ref: ./routes/widget.yml#/widget
 components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+    apiKeyAuth:
+      type: apiKey
+      in: header
+      name: authorization
+      description: JWT token
   parameters:
     ConsoleName:
       $ref: ./parameters/path-params.yml#/ConsoleName
