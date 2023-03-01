@@ -5,7 +5,7 @@ Provider:
       type: string
     type: 
       type: string
-      description: This describes how type of the provider
+      description: This describes the type of the provider
   required:
     - type
     - id
