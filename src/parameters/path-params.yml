@@ -19,3 +19,10 @@ WidgetId:
   required: true
   schema:
     type: string
+Overrides:
+  name: overrides
+  in: query
+  description: Overrides
+  required: false
+  schema:
+    type: object
