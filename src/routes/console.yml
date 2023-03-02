@@ -48,6 +48,7 @@ consoles:
               $ref: '../schemas/console.yml#/Console'
       default:
         $ref: '../shared-responses/index.yml#/TinyStacksError'
+console:
   put:
     operationId: updateConsole
     tags:

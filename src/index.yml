@@ -8,6 +8,8 @@ paths:
     $ref: ./routes/ping.yml#/ping
   /consoles:
     $ref: ./routes/console.yml#/consoles
+  /consoles/{consoleName}:
+    $ref: ./routes/console.yml#/console
   /consoles/{consoleName}/pages:
     $ref: ./routes/page.yml#/pages
   /consoles/{consoleName}/pages/{pageId}:
