@@ -8,9 +8,9 @@ consoles:
     # parameters:
     #   - $ref: ../auth/model.yml#/components/parameters/Group
     #   - $ref: ../auth/model.yml#/components/parameters/Authorization
-    # security:
-    #   - bearerAuth: []
-    #   - apiKeyAuth: []
+    security:
+      - apiKeyAuth: []
+      # - bearerAuth: []
     responses:
       '200':
         description: A list of Consoles.
@@ -30,9 +30,9 @@ consoles:
     # parameters:
     #   - $ref: ../auth/model.yml#/components/parameters/Group
     #   - $ref: ../auth/model.yml#/components/parameters/Authorization
-    # security:
-    #   - bearerAuth: []
-    #   - apiKeyAuth: []
+    security:
+      - apiKeyAuth: []
+      # - bearerAuth: []
     requestBody:
       required: true
       content:
@@ -57,9 +57,9 @@ consoles:
       - $ref: '../parameters/path-params.yml#/ConsoleName'
     #   - $ref: ../auth/model.yml#/components/parameters/Group
     #   - $ref: ../auth/model.yml#/components/parameters/Authorization
-    # security:
-    #   - bearerAuth: []
-    #   - apiKeyAuth: []
+    security:
+      - apiKeyAuth: []
+      # - bearerAuth: []
     requestBody:
       required: true
       content:
@@ -84,9 +84,9 @@ consoles:
       - $ref: '../parameters/path-params.yml#/ConsoleName'
     #   - $ref: ../auth/model.yml#/components/parameters/Group
     #   - $ref: ../auth/model.yml#/components/parameters/Authorization
-    # security:
+    security:
+      - apiKeyAuth: []
     #   - bearerAuth: []
-    #   - apiKeyAuth: []
     responses:
       '200':
         description: the deleted Console

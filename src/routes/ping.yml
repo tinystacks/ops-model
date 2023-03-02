@@ -2,6 +2,9 @@ ping:
   get:
     tags:
       - Service Health 
+    security:
+      - apiKeyAuth: []
+    #   - bearerAuth: []
     responses:
       '200':
         description: Returns the string Healthy Connection in an HTTP 200 response

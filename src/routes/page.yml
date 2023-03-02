@@ -9,9 +9,9 @@ pages:
       - $ref: '../parameters/path-params.yml#/ConsoleName'
     #   - $ref: ../auth/model.yml#/components/parameters/Group
     #   - $ref: ../auth/model.yml#/components/parameters/Authorization
-    # security:
+    security:
+      - apiKeyAuth: []
     #   - bearerAuth: []
-    #   - apiKeyAuth: []
     responses:
       '200':
         description: A list of Pages.
@@ -32,9 +32,9 @@ pages:
       - $ref: '../parameters/path-params.yml#/ConsoleName'
     #   - $ref: ../auth/model.yml#/components/parameters/Group
     #   - $ref: ../auth/model.yml#/components/parameters/Authorization
-    # security:
+    security:
+      - apiKeyAuth: []
     #   - bearerAuth: []
-    #   - apiKeyAuth: []
     requestBody:
       required: true
       content:
@@ -61,9 +61,9 @@ page:
       - $ref: '../parameters/path-params.yml#/PageId'
     #   - $ref: ../auth/model.yml#/components/parameters/Group
     #   - $ref: ../auth/model.yml#/components/parameters/Authorization
-    # security:
+    security:
+      - apiKeyAuth: []
     #   - bearerAuth: []
-    #   - apiKeyAuth: []
     requestBody:
       required: true
       content:
@@ -89,9 +89,9 @@ page:
       - $ref: '../parameters/path-params.yml#/PageId'
     #   - $ref: ../auth/model.yml#/components/parameters/Group
     #   - $ref: ../auth/model.yml#/components/parameters/Authorization
-    # security:
+    security:
+      - apiKeyAuth: []
     #   - bearerAuth: []
-    #   - apiKeyAuth: []
     responses:
       '200':
         description: the deleted Page

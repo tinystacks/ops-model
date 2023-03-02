@@ -8,9 +8,9 @@ widgets:
       - $ref: '../parameters/path-params.yml#/ConsoleName'
     #   - $ref: ../auth/model.yml#/components/parameters/Group
     #   - $ref: ../auth/model.yml#/components/parameters/Authorization
-    # security:
+    security:
+      - apiKeyAuth: []
     #   - bearerAuth: []
-    #   - apiKeyAuth: []
     requestBody:
       required: true
       content:
@@ -38,9 +38,9 @@ widget:
       - $ref: '../parameters/path-params.yml#/WidgetId'
     #   - $ref: ../auth/model.yml#/components/parameters/Group
     #   - $ref: ../auth/model.yml#/components/parameters/Authorization
-    # security:
+    security:
+      - apiKeyAuth: []
     #   - bearerAuth: []
-    #   - apiKeyAuth: []
     responses:
       '200':
         description: A fully hydrated Widget.
@@ -60,9 +60,9 @@ widget:
       - $ref: '../parameters/path-params.yml#/WidgetId'
     #   - $ref: ../auth/model.yml#/components/parameters/Group
     #   - $ref: ../auth/model.yml#/components/parameters/Authorization
-    # security:
+    security:
+      - apiKeyAuth: []
     #   - bearerAuth: []
-    #   - apiKeyAuth: []
     requestBody:
       required: true
       content:
@@ -88,9 +88,9 @@ widget:
       - $ref: '../parameters/path-params.yml#/WidgetId'
     #   - $ref: ../auth/model.yml#/components/parameters/Group
     #   - $ref: ../auth/model.yml#/components/parameters/Authorization
-    # security:
+    security:
+      - apiKeyAuth: []
     #   - bearerAuth: []
-    #   - apiKeyAuth: []
     responses:
       '200':
         description: the deleted Widget
