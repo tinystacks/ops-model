@@ -6,7 +6,7 @@ ConsoleName:
   schema:
     type: string
 DashboardId:
-  name: pageId
+  name: dashboardId
   in: path
   description: Dashboard id
   required: true

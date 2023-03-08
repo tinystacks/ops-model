@@ -8,7 +8,7 @@ Dashboard:
       items: 
         type: string
     route:
-      description: A URL-safe route where this page can be accessed
+      description: A URL-safe route where this dashboard can be accessed
       type: string
   required:
     - route

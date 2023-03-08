@@ -50,11 +50,11 @@ dashboards:
               $ref: '../schemas/dashboard.yml#/Dashboard'
       default:
         $ref: '../shared-responses/index.yml#/TinyStacksError'
-page:
+dashboard:
   put:
     operationId: updateDashboard
     tags:
-      - page
+      - dashboard
     summary: Updates a Dashboard
     parameters:
       - $ref: '../parameters/path-params.yml#/ConsoleName'
@@ -82,7 +82,7 @@ page:
   delete:
     operationId: deleteDashboard
     tags:
-      - page
+      - dashboard
     summary: Deletes a Dashboard
     parameters:
       - $ref: '../parameters/path-params.yml#/ConsoleName'
