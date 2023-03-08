@@ -1,4 +1,4 @@
-Page:
+Dashboard:
   type: object
   properties:
     id: 

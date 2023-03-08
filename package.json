@@ -1,6 +1,6 @@
 {
   "name": "@tinystacks/ops-model",
-  "version": "0.0.0-release",
+  "version": "0.0.5-release",
   "description": "",
   "main": "dist/index.js",
   "files": [

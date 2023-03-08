@@ -5,10 +5,10 @@ YamlConsole:
     name:
       description: a human-readable name for your console.
       type: string
-    pages:
+    dashboards:
       type: object
       additionalProperties:
-        $ref: './yaml-page.yml#/YamlPage'
+        $ref: './yaml-dashboard.yml#/YamlDashboard'
     widgets:
       type: object
       additionalProperties:
@@ -23,6 +23,6 @@ YamlConsole:
         type: string
   required:
     - name
-    - pages
+    - dashboards
     - providers
     - widgets

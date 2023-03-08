@@ -1,0 +1,7 @@
+Overrides:
+  name: overrides
+  in: query
+  description: Widget property overrides
+  required: false
+  schema:
+    type: object

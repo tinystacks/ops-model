@@ -10,10 +10,10 @@ paths:
     $ref: ./routes/console.yml#/consoles
   /consoles/{consoleName}:
     $ref: ./routes/console.yml#/console
-  /consoles/{consoleName}/pages:
-    $ref: ./routes/page.yml#/pages
-  /consoles/{consoleName}/pages/{pageId}:
-    $ref: ./routes/page.yml#/page
+  /consoles/{consoleName}/dashboards:
+    $ref: ./routes/dashboard.yml#/dashboards
+  /consoles/{consoleName}/dashboards/{pageId}:
+    $ref: ./routes/dashboard.yml#/page
   /consoles/{consoleName}/widgets:
     $ref: ./routes/widget.yml#/widgets
   /consoles/{consoleName}/widgets/{widgetId}:
@@ -37,8 +37,8 @@ components:
       $ref: ./schemas/console.yml#/Console
     Widget:
       $ref: ./schemas/widget.yml#/Widget
-    Page:
-      $ref: ./schemas/page.yml#/Page
+    Dashboard:
+      $ref: ./schemas/dashboard.yml#/Dashboard
     Provider:
       $ref: ./schemas/provider.yml#/Provider
     TinyStacksError:
@@ -47,8 +47,8 @@ components:
       $ref: ./schemas/ping.yml#/Ping
     YamlConsole:
       $ref: ./schemas/yaml-console.yml#/YamlConsole
-    YamlPage:
-      $ref: ./schemas/yaml-page.yml#/YamlPage
+    YamlDashboard:
+      $ref: ./schemas/yaml-dashboard.yml#/YamlDashboard
     YamlProvider:
       $ref: ./schemas/yaml-provider.yml#/YamlProvider
     YamlWidget:
