@@ -14,10 +14,10 @@ Config:
           type: object
           additionalProperties:
             type: string
-        pages:
+        dashboards:
           type: object
           additionalProperties:
-            $ref: './yaml-page.yml#/YamlPage'
+            $ref: './yaml-dashboard.yml#/YamlDashboard'
         widgets:
           type: object
           additionalProperties:

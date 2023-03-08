@@ -5,10 +5,10 @@ Console:
     name:
       description: a human-readable name for your console.
       type: string
-    pages:
+    dashboards:
       type: object
       additionalProperties:
-        $ref: './page.yml#/Page'
+        $ref: './dashboard.yml#/Dashboard'
     widgets:
       type: object
       additionalProperties:
@@ -23,6 +23,6 @@ Console:
         type: string
   required:
     - name
-    - pages
+    - dashboards
     - providers
     - widgets

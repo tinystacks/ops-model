@@ -5,10 +5,10 @@ ConsoleName:
   required: true
   schema:
     type: string
-PageId:
+DashboardId:
   name: pageId
   in: path
-  description: Page id
+  description: Dashboard id
   required: true
   schema:
     type: string
