@@ -9,7 +9,7 @@ Config:
         providers:
           type: object
           additionalProperties:
-            $ref: './provider.yml#/Provider'
+            $ref: './yaml-provider.yml#/YamlProvider'
         dependencies:
           type: object
           additionalProperties:
