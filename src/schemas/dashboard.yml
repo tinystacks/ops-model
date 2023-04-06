@@ -10,6 +10,11 @@ Dashboard:
     route:
       description: A URL-safe route where this dashboard can be accessed
       type: string
+    parameters:
+      description: runtime parameters that can be assigned a value via a query param in the url
+      type: array
+      items:
+        $ref: './parameter.yml#/Parameter'
   required:
     - route
     - id

@@ -7,5 +7,9 @@ YamlDashboard:
       type: array
       items:
         $ref: './yaml-widget.yml#/YamlWidget'
+    parameters:
+      type: array
+      items:
+        $ref: './parameter.yml#/Parameter'
   required:
     - route
