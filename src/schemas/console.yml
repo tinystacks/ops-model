@@ -21,6 +21,11 @@ Console:
       type: object
       additionalProperties:
         type: string
+    constants:
+      type: object
+      additionalProperties:
+        $ref: './constant.yml#/Constant'
+
   required:
     - name
     - dashboards

@@ -57,4 +57,6 @@ components:
       $ref: ./schemas/config.yml#/Config
     Parameter:
       $ref: './schemas/parameter.yml#/Parameter'
+    Constant:
+      $ref: './schemas/constant.yml#/Constant'
     

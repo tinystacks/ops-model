@@ -1,0 +1,20 @@
+Constant:
+  type: object
+  properties:
+    value:
+      type: string
+      description: the value for this constant
+    type:
+      type: string
+      description: the type for this constant
+      enum:
+        - string
+        - number
+        - boolean
+        - date
+      default: string
+    description:
+      type: string
+      description: description of this constant
+  required:
+    - value
