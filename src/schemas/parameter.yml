@@ -1,0 +1,20 @@
+Parameter:
+  type: object
+  properties:
+    name:
+      type: string
+      description: a uri compliant string to name this parameter
+    type:
+      type: string
+      description: the type for this parameter
+      enum:
+        - string
+        - number
+        - boolean
+        - date
+      default: string
+    default:
+      type: string
+      description: the default value for this parameter
+  required:
+    - name

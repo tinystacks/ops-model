@@ -55,4 +55,6 @@ components:
       $ref: ./schemas/yaml-widget.yml#/YamlWidget
     Config:
       $ref: ./schemas/config.yml#/Config
+    Parameter:
+      $ref: './schemas/parameter.yml#/Parameter'
     

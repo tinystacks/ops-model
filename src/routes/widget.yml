@@ -37,6 +37,8 @@ widget:
       - $ref: '../parameters/path-params.yml#/ConsoleName'
       - $ref: '../parameters/path-params.yml#/WidgetId'
       - $ref: '../parameters/query-params.yml#/Overrides'
+      - $ref: '../parameters/query-params.yml#/Parameters'
+      - $ref: '../parameters/query-params.yml#/DashboardId'
     #   - $ref: ../auth/model.yml#/components/parameters/Group
     #   - $ref: ../auth/model.yml#/components/parameters/Authorization
     security:

@@ -5,3 +5,17 @@ Overrides:
   required: false
   schema:
     type: object
+Parameters:
+  name: parameters
+  in: query
+  description: Dashboard level parameters
+  required: false
+  schema:
+    type: object
+DashboardId:
+  name: dashboardId
+  in: query
+  description: Dashboard id to use as context when fetching the widget data
+  required: false
+  schema:
+    type: string
