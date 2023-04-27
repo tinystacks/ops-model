@@ -1,34 +1,41 @@
-YamlWidget:
-  allOf:
-  - type: object
-    properties:
-      type:
-        type: string
-        description: This describes how this widget should be rendered. The "type" should be equivalent to the Object definition's name of the widget you are trying to render.
-      displayName:
-        description: A human-readable display name, usually used to title a widget
-        type: string
-      providers:
-        type: array
-        items:
-          $ref: './provider.yml#/Provider'
-      children:
-        type: array
-        items:
-          $ref: '#/YamlWidget'
-      displayOptions:
-        type: object
-        properties:
-          showDisplayName:
-            description: Whether to show the display name
-            type: boolean
-          showDescription:
-            description: Whether to show the description
-            type: boolean
-      description:
-        type: string
-    required:
-      - type
-      - displayName
-  - type: object
-    additionalProperties: {}
+---
+openapi: 3.0.0
+info:
+  title: todo
+  description: todo
+  version: 1.0.120
+paths: {}
+components:
+  schemas:
+    YamlWidget:
+      type: object
+      properties:
+        type:
+          type: string
+          description: This describes how this widget should be rendered. The "type" should be equivalent to the Object definition's name of the widget you are trying to render.
+        displayName:
+          description: A human-readable display name, usually used to title a widget
+          type: string
+        providers:
+          type: array
+          items:
+            $ref: provider.yml#/components/schemas/Provider
+        children:
+          type: array
+          items:
+            $ref: '#/components/schemas/YamlWidget'
+        displayOptions:
+          type: object
+          properties:
+            showDisplayName:
+              description: Whether to show the display name
+              type: boolean
+            showDescription:
+              description: Whether to show the description
+              type: boolean
+        description:
+          type: string
+        additionalProperties: {}
+      required:
+        - type
+        - displayName

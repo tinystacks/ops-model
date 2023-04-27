@@ -6,8 +6,7 @@
     "version" : "1.0"
   },
   "servers" : [ {
-    "description" : "prod",
-    "url" : "https://api.tinystacks.com"
+    "url" : "/"
   } ],
   "paths" : {
     "/ping" : {
@@ -756,7 +755,8 @@
             "type" : "string"
           },
           "displayOptions" : {
-            "$ref" : "#/components/schemas/Widget_displayOptions"
+            "additionalProperties" : { },
+            "type" : "object"
           },
           "additionalProperties" : { }
         },
@@ -799,7 +799,6 @@
             "type" : "string"
           }
         },
-        "required" : [ "id", "type" ],
         "type" : "object"
       },
       "TinyStacksError" : {
@@ -836,19 +835,19 @@
           },
           "dashboards" : {
             "additionalProperties" : {
-              "$ref" : "./schemas/yaml-dashboard.yml#/YamlDashboard"
+              "$ref" : "#/components/schemas/YamlDashboard"
             },
             "type" : "object"
           },
           "widgets" : {
             "additionalProperties" : {
-              "$ref" : "./schemas/yaml-widget.yml#/YamlWidget"
+              "$ref" : "#/components/schemas/YamlWidget"
             },
             "type" : "object"
           },
           "providers" : {
             "additionalProperties" : {
-              "$ref" : "./schemas/yaml-provider.yml#/YamlProvider"
+              "$ref" : "#/components/schemas/YamlProvider"
             },
             "type" : "object"
           },
@@ -860,10 +859,11 @@
           },
           "constants" : {
             "additionalProperties" : {
-              "$ref" : "./schemas/constant.yml#/Constant"
+              "$ref" : "#/components/schemas/Constant"
             },
             "type" : "object"
-          }
+          },
+          "additionalProperties" : { }
         },
         "required" : [ "dashboards", "name", "providers", "widgets" ],
         "type" : "object"
@@ -875,13 +875,13 @@
           },
           "widgets" : {
             "items" : {
-              "$ref" : "./schemas/yaml-widget.yml#/YamlWidget"
+              "$ref" : "#/components/schemas/YamlWidget"
             },
             "type" : "array"
           },
           "parameters" : {
             "items" : {
-              "$ref" : "./schemas/parameter.yml#/Parameter"
+              "$ref" : "#/components/schemas/Parameter"
             },
             "type" : "array"
           }
@@ -903,20 +903,44 @@
         "type" : "object"
       },
       "YamlWidget" : {
-        "allOf" : [ {
-          "$ref" : "#/components/schemas/YamlWidget_allOf"
-        }, {
-          "additionalProperties" : { },
-          "type" : "object"
-        } ]
+        "properties" : {
+          "type" : {
+            "description" : "This describes how this widget should be rendered. The \"type\" should be equivalent to the Object definition's name of the widget you are trying to render.",
+            "type" : "string"
+          },
+          "displayName" : {
+            "description" : "A human-readable display name, usually used to title a widget",
+            "type" : "string"
+          },
+          "providers" : {
+            "items" : {
+              "$ref" : "#/components/schemas/Provider"
+            },
+            "type" : "array"
+          },
+          "children" : {
+            "items" : {
+              "$ref" : "#/components/schemas/YamlWidget"
+            },
+            "type" : "array"
+          },
+          "displayOptions" : {
+            "$ref" : "#/components/schemas/YamlWidget_displayOptions"
+          },
+          "description" : {
+            "type" : "string"
+          },
+          "additionalProperties" : { }
+        },
+        "required" : [ "displayName", "type" ],
+        "type" : "object"
       },
       "Config" : {
         "properties" : {
-          "Console" : {
-            "$ref" : "#/components/schemas/Config_Console"
+          "console" : {
+            "$ref" : "#/components/schemas/Config_console"
           }
         },
-        "required" : [ "Console" ],
         "type" : "object"
       },
       "Parameter" : {
@@ -963,7 +987,7 @@
         "enum" : [ "Unauthorized", "Unauthenticated", "Validation", "NotFound", "Conflict", "InternalServerError" ],
         "type" : "string"
       },
-      "Widget_displayOptions" : {
+      "YamlWidget_displayOptions" : {
         "properties" : {
           "showDisplayName" : {
             "description" : "Whether to show the display name",
@@ -976,61 +1000,14 @@
         },
         "type" : "object"
       },
-      "YamlWidget_allOf_displayOptions" : {
-        "properties" : {
-          "showDisplayName" : {
-            "description" : "Whether to show the display name",
-            "type" : "boolean"
-          },
-          "showDescription" : {
-            "description" : "Whether to show the description",
-            "type" : "boolean"
-          }
-        },
-        "type" : "object",
-        "example" : null
-      },
-      "YamlWidget_allOf" : {
-        "properties" : {
-          "type" : {
-            "description" : "This describes how this widget should be rendered. The \"type\" should be equivalent to the Object definition's name of the widget you are trying to render.",
-            "type" : "string"
-          },
-          "displayName" : {
-            "description" : "A human-readable display name, usually used to title a widget",
-            "type" : "string"
-          },
-          "providers" : {
-            "items" : {
-              "$ref" : "./schemas/provider.yml#/Provider"
-            },
-            "type" : "array"
-          },
-          "children" : {
-            "items" : {
-              "$ref" : "#/components/schemas/YamlWidget"
-            },
-            "type" : "array"
-          },
-          "displayOptions" : {
-            "$ref" : "#/components/schemas/YamlWidget_allOf_displayOptions"
-          },
-          "description" : {
-            "type" : "string"
-          }
-        },
-        "required" : [ "displayName", "type" ],
-        "type" : "object",
-        "example" : null
-      },
-      "Config_Console" : {
+      "Config_console" : {
         "properties" : {
           "name" : {
             "type" : "string"
           },
           "providers" : {
             "additionalProperties" : {
-              "$ref" : "./schemas/yaml-provider.yml#/YamlProvider"
+              "$ref" : "#/components/schemas/YamlProvider"
             },
             "type" : "object"
           },
@@ -1042,18 +1019,17 @@
           },
           "dashboards" : {
             "additionalProperties" : {
-              "$ref" : "./schemas/yaml-dashboard.yml#/YamlDashboard"
+              "$ref" : "#/components/schemas/YamlDashboard"
             },
             "type" : "object"
           },
           "widgets" : {
             "additionalProperties" : {
-              "$ref" : "./schemas/yaml-widget.yml#/YamlWidget"
+              "$ref" : "#/components/schemas/YamlWidget"
             },
             "type" : "object"
           }
         },
-        "required" : [ "name" ],
         "type" : "object"
       }
     },

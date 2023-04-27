@@ -5,19 +5,19 @@ info:
   description: Hello!
 paths:
   /ping:
-    $ref: ./routes/ping.yml#/ping
+    $ref: routes/ping.yml#/ping
   /consoles:
-    $ref: ./routes/console.yml#/consoles
+    $ref: routes/console.yml#/consoles
   /consoles/{consoleName}:
-    $ref: ./routes/console.yml#/console
+    $ref: routes/console.yml#/console
   /consoles/{consoleName}/dashboards:
-    $ref: ./routes/dashboard.yml#/dashboards
+    $ref: routes/dashboard.yml#/dashboards
   /consoles/{consoleName}/dashboards/{dashboardId}:
-    $ref: ./routes/dashboard.yml#/dashboard
+    $ref: routes/dashboard.yml#/dashboard
   /consoles/{consoleName}/widgets:
-    $ref: ./routes/widget.yml#/widgets
+    $ref: routes/widget.yml#/widgets
   /consoles/{consoleName}/widgets/{widgetId}:
-    $ref: ./routes/widget.yml#/widget
+    $ref: routes/widget.yml#/widget
 components:
   securitySchemes:
     bearerAuth:
@@ -38,25 +38,25 @@ components:
     Widget:
       $ref: ./schemas/widget.yml#/Widget
     Dashboard:
-      $ref: ./schemas/dashboard.yml#/Dashboard
+      $ref: ./schemas/dashboard.yml#/components/schemas/Dashboard
     Provider:
-      $ref: ./schemas/provider.yml#/Provider
+      $ref: ./schemas/provider.yml#/components/schemas/Provider
     TinyStacksError:
       $ref: ./schemas/tinystacks-error.yml#/TinyStacksError
     Ping:
       $ref: ./schemas/ping.yml#/Ping
     YamlConsole:
-      $ref: ./schemas/yaml-console.yml#/YamlConsole
+      $ref: ./schemas/yaml-console.yml#/components/schemas/YamlConsole
     YamlDashboard:
-      $ref: ./schemas/yaml-dashboard.yml#/YamlDashboard
+      $ref: ./schemas/yaml-dashboard.yml#/components/schemas/YamlDashboard
     YamlProvider:
-      $ref: ./schemas/yaml-provider.yml#/YamlProvider
+      $ref: ./schemas/yaml-provider.yml#/components/schemas/YamlProvider
     YamlWidget:
-      $ref: ./schemas/yaml-widget.yml#/YamlWidget
+      $ref: ./schemas/yaml-widget.yml#/components/schemas/YamlWidget
     Config:
-      $ref: ./schemas/config.yml#/Config
+      $ref: ./schemas/config.yml#/components/schemas/Config
     Parameter:
-      $ref: './schemas/parameter.yml#/Parameter'
+      $ref: './schemas/parameter.yml#/components/schemas/Parameter'
     Constant:
-      $ref: './schemas/constant.yml#/Constant'
+      $ref: './schemas/constant.yml#/components/schemas/Constant'
     
