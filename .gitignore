@@ -2,3 +2,7 @@ node_modules
 dist
 gen
 *.tgz
+openapitools.json
+api/.openapi*
+api/.openapi*/**
+api/README.md

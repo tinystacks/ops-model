@@ -1,0 +1,1073 @@
+{
+  "openapi" : "3.0.0",
+  "info" : {
+    "description" : "Hello!",
+    "title" : "API Title",
+    "version" : "1.0"
+  },
+  "servers" : [ {
+    "url" : "/"
+  } ],
+  "paths" : {
+    "/ping" : {
+      "get" : {
+        "responses" : {
+          "200" : {
+            "content" : {
+              "text/plain" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Ping"
+                }
+              }
+            },
+            "description" : "Returns the string Healthy Connection in an HTTP 200 response"
+          }
+        },
+        "security" : [ {
+          "apiKeyAuth" : [ ]
+        } ],
+        "tags" : [ "Service Health" ]
+      }
+    },
+    "/consoles" : {
+      "get" : {
+        "operationId" : "getConsoles",
+        "responses" : {
+          "200" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "items" : {
+                    "$ref" : "#/components/schemas/Console"
+                  },
+                  "type" : "array"
+                }
+              }
+            },
+            "description" : "A list of Consoles."
+          },
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/TinyStacksError"
+                }
+              }
+            },
+            "description" : "The specified resource was not found"
+          }
+        },
+        "security" : [ {
+          "apiKeyAuth" : [ ]
+        } ],
+        "summary" : "Fetches the details for all of the Consoles in scope.",
+        "tags" : [ "console" ]
+      },
+      "post" : {
+        "operationId" : "createConsole",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/Console"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Console"
+                }
+              }
+            },
+            "description" : "the new Console"
+          },
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/TinyStacksError"
+                }
+              }
+            },
+            "description" : "The specified resource was not found"
+          }
+        },
+        "security" : [ {
+          "apiKeyAuth" : [ ]
+        } ],
+        "summary" : "Creates a Console",
+        "tags" : [ "console" ]
+      }
+    },
+    "/consoles/{consoleName}" : {
+      "delete" : {
+        "operationId" : "deleteConsole",
+        "parameters" : [ {
+          "description" : "Console name",
+          "in" : "path",
+          "name" : "consoleName",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Console"
+                }
+              }
+            },
+            "description" : "the deleted Console"
+          },
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/TinyStacksError"
+                }
+              }
+            },
+            "description" : "The specified resource was not found"
+          }
+        },
+        "security" : [ {
+          "apiKeyAuth" : [ ]
+        } ],
+        "summary" : "Deletes a Console",
+        "tags" : [ "console" ]
+      },
+      "put" : {
+        "operationId" : "updateConsole",
+        "parameters" : [ {
+          "description" : "Console name",
+          "in" : "path",
+          "name" : "consoleName",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/Console"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Console"
+                }
+              }
+            },
+            "description" : "the updated Console"
+          },
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/TinyStacksError"
+                }
+              }
+            },
+            "description" : "The specified resource was not found"
+          }
+        },
+        "security" : [ {
+          "apiKeyAuth" : [ ]
+        } ],
+        "summary" : "Updates a Console",
+        "tags" : [ "console" ]
+      }
+    },
+    "/consoles/{consoleName}/dashboards" : {
+      "get" : {
+        "operationId" : "getDashboards",
+        "parameters" : [ {
+          "description" : "Console name",
+          "in" : "path",
+          "name" : "consoleName",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "items" : {
+                    "$ref" : "#/components/schemas/Dashboard"
+                  },
+                  "type" : "array"
+                }
+              }
+            },
+            "description" : "A list of Dashboards."
+          },
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/TinyStacksError"
+                }
+              }
+            },
+            "description" : "The specified resource was not found"
+          }
+        },
+        "security" : [ {
+          "apiKeyAuth" : [ ]
+        } ],
+        "summary" : "Fetches the details for all of the Dashboards in the specified Console.",
+        "tags" : [ "dashboard" ]
+      },
+      "post" : {
+        "operationId" : "createDashboard",
+        "parameters" : [ {
+          "description" : "Console name",
+          "in" : "path",
+          "name" : "consoleName",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/Dashboard"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Dashboard"
+                }
+              }
+            },
+            "description" : "the new Dashboard"
+          },
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/TinyStacksError"
+                }
+              }
+            },
+            "description" : "The specified resource was not found"
+          }
+        },
+        "security" : [ {
+          "apiKeyAuth" : [ ]
+        } ],
+        "summary" : "Creates a Dashboard",
+        "tags" : [ "dashboard" ]
+      }
+    },
+    "/consoles/{consoleName}/dashboards/{dashboardId}" : {
+      "delete" : {
+        "operationId" : "deleteDashboard",
+        "parameters" : [ {
+          "description" : "Console name",
+          "in" : "path",
+          "name" : "consoleName",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "description" : "Dashboard id",
+          "in" : "path",
+          "name" : "dashboardId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Dashboard"
+                }
+              }
+            },
+            "description" : "the deleted Dashboard"
+          },
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/TinyStacksError"
+                }
+              }
+            },
+            "description" : "The specified resource was not found"
+          }
+        },
+        "security" : [ {
+          "apiKeyAuth" : [ ]
+        } ],
+        "summary" : "Deletes a Dashboard",
+        "tags" : [ "dashboard" ]
+      },
+      "put" : {
+        "operationId" : "updateDashboard",
+        "parameters" : [ {
+          "description" : "Console name",
+          "in" : "path",
+          "name" : "consoleName",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "description" : "Dashboard id",
+          "in" : "path",
+          "name" : "dashboardId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/Dashboard"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Dashboard"
+                }
+              }
+            },
+            "description" : "the updated Dashboard"
+          },
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/TinyStacksError"
+                }
+              }
+            },
+            "description" : "The specified resource was not found"
+          }
+        },
+        "security" : [ {
+          "apiKeyAuth" : [ ]
+        } ],
+        "summary" : "Updates a Dashboard",
+        "tags" : [ "dashboard" ]
+      }
+    },
+    "/consoles/{consoleName}/widgets" : {
+      "post" : {
+        "operationId" : "createWidget",
+        "parameters" : [ {
+          "description" : "Console name",
+          "in" : "path",
+          "name" : "consoleName",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/Widget"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Widget"
+                }
+              }
+            },
+            "description" : "the new Widget"
+          },
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/TinyStacksError"
+                }
+              }
+            },
+            "description" : "The specified resource was not found"
+          }
+        },
+        "security" : [ {
+          "apiKeyAuth" : [ ]
+        } ],
+        "summary" : "Creates a Widget",
+        "tags" : [ "widget" ]
+      }
+    },
+    "/consoles/{consoleName}/widgets/{widgetId}" : {
+      "delete" : {
+        "operationId" : "deleteWidget",
+        "parameters" : [ {
+          "description" : "Console name",
+          "in" : "path",
+          "name" : "consoleName",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "description" : "Widget id",
+          "in" : "path",
+          "name" : "widgetId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Widget"
+                }
+              }
+            },
+            "description" : "the deleted Widget"
+          },
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/TinyStacksError"
+                }
+              }
+            },
+            "description" : "The specified resource was not found"
+          }
+        },
+        "security" : [ {
+          "apiKeyAuth" : [ ]
+        } ],
+        "summary" : "Deletes a Widget",
+        "tags" : [ "widget" ]
+      },
+      "get" : {
+        "operationId" : "getWidget",
+        "parameters" : [ {
+          "description" : "Console name",
+          "in" : "path",
+          "name" : "consoleName",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "description" : "Widget id",
+          "in" : "path",
+          "name" : "widgetId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "description" : "Widget property overrides",
+          "in" : "query",
+          "name" : "overrides",
+          "required" : false,
+          "schema" : {
+            "type" : "object"
+          }
+        }, {
+          "description" : "Dashboard level parameters",
+          "in" : "query",
+          "name" : "parameters",
+          "required" : false,
+          "schema" : {
+            "type" : "object"
+          }
+        }, {
+          "description" : "Dashboard id",
+          "in" : "path",
+          "name" : "dashboardId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Widget"
+                }
+              }
+            },
+            "description" : "A fully hydrated Widget."
+          },
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/TinyStacksError"
+                }
+              }
+            },
+            "description" : "The specified resource was not found"
+          }
+        },
+        "security" : [ {
+          "apiKeyAuth" : [ ]
+        } ],
+        "summary" : "Fetches the details for the specified Widget.",
+        "tags" : [ "widget" ]
+      },
+      "put" : {
+        "operationId" : "updateWidget",
+        "parameters" : [ {
+          "description" : "Console name",
+          "in" : "path",
+          "name" : "consoleName",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "description" : "Widget id",
+          "in" : "path",
+          "name" : "widgetId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/Widget"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Widget"
+                }
+              }
+            },
+            "description" : "the updated Widget"
+          },
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/TinyStacksError"
+                }
+              }
+            },
+            "description" : "The specified resource was not found"
+          }
+        },
+        "security" : [ {
+          "apiKeyAuth" : [ ]
+        } ],
+        "summary" : "Updates a Widget",
+        "tags" : [ "widget" ]
+      }
+    }
+  },
+  "components" : {
+    "parameters" : {
+      "ConsoleName" : {
+        "description" : "Console name",
+        "in" : "path",
+        "name" : "consoleName",
+        "required" : true,
+        "schema" : {
+          "type" : "string"
+        }
+      },
+      "DashboardId" : {
+        "description" : "Dashboard id",
+        "in" : "path",
+        "name" : "dashboardId",
+        "required" : true,
+        "schema" : {
+          "type" : "string"
+        }
+      },
+      "WidgetId" : {
+        "description" : "Widget id",
+        "in" : "path",
+        "name" : "widgetId",
+        "required" : true,
+        "schema" : {
+          "type" : "string"
+        }
+      },
+      "Overrides" : {
+        "description" : "Widget property overrides",
+        "in" : "query",
+        "name" : "overrides",
+        "required" : false,
+        "schema" : {
+          "type" : "object"
+        }
+      },
+      "Parameters" : {
+        "description" : "Dashboard level parameters",
+        "in" : "query",
+        "name" : "parameters",
+        "required" : false,
+        "schema" : {
+          "type" : "object"
+        }
+      }
+    },
+    "responses" : {
+      "TinyStacksError" : {
+        "content" : {
+          "application/json" : {
+            "schema" : {
+              "$ref" : "#/components/schemas/TinyStacksError"
+            }
+          }
+        },
+        "description" : "The specified resource was not found"
+      }
+    },
+    "schemas" : {
+      "Console" : {
+        "description" : "A console is a top-level construct that defines all",
+        "properties" : {
+          "name" : {
+            "description" : "a human-readable name for your console.",
+            "type" : "string"
+          },
+          "dashboards" : {
+            "additionalProperties" : {
+              "$ref" : "#/components/schemas/Dashboard"
+            },
+            "type" : "object"
+          },
+          "widgets" : {
+            "additionalProperties" : {
+              "$ref" : "#/components/schemas/Widget"
+            },
+            "type" : "object"
+          },
+          "providers" : {
+            "additionalProperties" : {
+              "$ref" : "#/components/schemas/Provider"
+            },
+            "type" : "object"
+          },
+          "dependencies" : {
+            "additionalProperties" : {
+              "type" : "string"
+            },
+            "type" : "object"
+          },
+          "constants" : {
+            "additionalProperties" : {
+              "$ref" : "#/components/schemas/Constant"
+            },
+            "type" : "object"
+          }
+        },
+        "required" : [ "dashboards", "name", "providers", "widgets" ],
+        "type" : "object"
+      },
+      "Widget" : {
+        "description" : "A widget is an object that is passed in and out of the API. It is used to serialize the complex and resolved widgets into only the information needed by the API and frontend to fetch data and render the widget, respectively. The main difference between this object and YamlWidget is that this object does not carry over resolved references to providers and children.",
+        "properties" : {
+          "id" : {
+            "description" : "Unique Id for this widget.",
+            "type" : "string"
+          },
+          "displayName" : {
+            "description" : "A human-readable display name, usually used to title a widget",
+            "type" : "string"
+          },
+          "type" : {
+            "description" : "This describes how this widget should be rendered. The \"type\" should be equivalent to the Object definition's name of the widget you are trying to render.",
+            "type" : "string"
+          },
+          "providerIds" : {
+            "items" : {
+              "type" : "string"
+            },
+            "type" : "array"
+          },
+          "childrenIds" : {
+            "items" : {
+              "type" : "string"
+            },
+            "type" : "array"
+          },
+          "description" : {
+            "type" : "string"
+          },
+          "displayOptions" : {
+            "$ref" : "#/components/schemas/Widget_displayOptions"
+          },
+          "additionalProperties" : { }
+        },
+        "required" : [ "displayName", "id", "type" ],
+        "type" : "object"
+      },
+      "Dashboard" : {
+        "properties" : {
+          "id" : {
+            "type" : "string"
+          },
+          "widgetIds" : {
+            "items" : {
+              "type" : "string"
+            },
+            "type" : "array"
+          },
+          "route" : {
+            "description" : "A URL-safe route where this dashboard can be accessed",
+            "type" : "string"
+          },
+          "parameters" : {
+            "description" : "runtime parameters that can be assigned a value via a query param in the url",
+            "items" : {
+              "$ref" : "#/components/schemas/Parameter"
+            },
+            "type" : "array"
+          }
+        },
+        "required" : [ "id", "route" ],
+        "type" : "object"
+      },
+      "Provider" : {
+        "properties" : {
+          "id" : {
+            "type" : "string"
+          },
+          "type" : {
+            "description" : "This describes the type of the provider",
+            "type" : "string"
+          }
+        },
+        "required" : [ "id", "type" ],
+        "type" : "object"
+      },
+      "TinyStacksError" : {
+        "properties" : {
+          "name" : {
+            "default" : "TinyStacksError",
+            "type" : "string"
+          },
+          "message" : {
+            "type" : "string"
+          },
+          "status" : {
+            "type" : "number"
+          },
+          "stack" : {
+            "type" : "string"
+          },
+          "type" : {
+            "$ref" : "#/components/schemas/TinyStacksErrorTypeEnum"
+          }
+        },
+        "type" : "object"
+      },
+      "Ping" : {
+        "example" : "pong",
+        "type" : "string"
+      },
+      "YamlConsole" : {
+        "description" : "A console is a top-level construct that defines all",
+        "properties" : {
+          "name" : {
+            "description" : "a human-readable name for your console.",
+            "type" : "string"
+          },
+          "dashboards" : {
+            "additionalProperties" : {
+              "$ref" : "./schemas/yaml-dashboard.yml#/YamlDashboard"
+            },
+            "type" : "object"
+          },
+          "widgets" : {
+            "additionalProperties" : {
+              "$ref" : "./schemas/yaml-widget.yml#/YamlWidget"
+            },
+            "type" : "object"
+          },
+          "providers" : {
+            "additionalProperties" : {
+              "$ref" : "./schemas/yaml-provider.yml#/YamlProvider"
+            },
+            "type" : "object"
+          },
+          "dependencies" : {
+            "additionalProperties" : {
+              "type" : "string"
+            },
+            "type" : "object"
+          },
+          "constants" : {
+            "additionalProperties" : {
+              "$ref" : "./schemas/constant.yml#/Constant"
+            },
+            "type" : "object"
+          }
+        },
+        "required" : [ "dashboards", "name", "providers", "widgets" ],
+        "type" : "object"
+      },
+      "YamlDashboard" : {
+        "properties" : {
+          "route" : {
+            "type" : "string"
+          },
+          "widgets" : {
+            "items" : {
+              "$ref" : "./schemas/yaml-widget.yml#/YamlWidget"
+            },
+            "type" : "array"
+          },
+          "parameters" : {
+            "items" : {
+              "$ref" : "./schemas/parameter.yml#/Parameter"
+            },
+            "type" : "array"
+          }
+        },
+        "required" : [ "route" ],
+        "type" : "object"
+      },
+      "YamlProvider" : {
+        "properties" : {
+          "id" : {
+            "type" : "string"
+          },
+          "type" : {
+            "description" : "This describes how type of the provider",
+            "type" : "string"
+          }
+        },
+        "required" : [ "type" ],
+        "type" : "object"
+      },
+      "YamlWidget" : {
+        "allOf" : [ {
+          "$ref" : "#/components/schemas/YamlWidget_allOf"
+        }, {
+          "additionalProperties" : { },
+          "type" : "object"
+        } ]
+      },
+      "Config" : {
+        "properties" : {
+          "Console" : {
+            "$ref" : "#/components/schemas/Config_Console"
+          }
+        },
+        "required" : [ "Console" ],
+        "type" : "object"
+      },
+      "Parameter" : {
+        "properties" : {
+          "name" : {
+            "description" : "a uri compliant string to name this parameter",
+            "type" : "string"
+          },
+          "type" : {
+            "default" : "string",
+            "description" : "the type for this parameter",
+            "enum" : [ "string", "number", "boolean", "date" ],
+            "type" : "string"
+          },
+          "default" : {
+            "description" : "the default value for this parameter",
+            "type" : "string"
+          }
+        },
+        "required" : [ "name" ],
+        "type" : "object"
+      },
+      "Constant" : {
+        "properties" : {
+          "value" : {
+            "description" : "the value for this constant",
+            "type" : "string"
+          },
+          "type" : {
+            "default" : "string",
+            "description" : "the type for this constant",
+            "enum" : [ "string", "number", "boolean", "date" ],
+            "type" : "string"
+          },
+          "description" : {
+            "description" : "description of this constant",
+            "type" : "string"
+          }
+        },
+        "required" : [ "value" ],
+        "type" : "object"
+      },
+      "TinyStacksErrorTypeEnum" : {
+        "enum" : [ "Unauthorized", "Unauthenticated", "Validation", "NotFound", "Conflict", "InternalServerError" ],
+        "type" : "string"
+      },
+      "Widget_displayOptions" : {
+        "properties" : {
+          "showDisplayName" : {
+            "description" : "Whether to show the display name",
+            "type" : "boolean"
+          },
+          "showDescription" : {
+            "description" : "Whether to show the description",
+            "type" : "boolean"
+          }
+        },
+        "type" : "object"
+      },
+      "YamlWidget_allOf_displayOptions" : {
+        "properties" : {
+          "showDisplayName" : {
+            "description" : "Whether to show the display name",
+            "type" : "boolean"
+          },
+          "showDescription" : {
+            "description" : "Whether to show the description",
+            "type" : "boolean"
+          }
+        },
+        "type" : "object",
+        "example" : null
+      },
+      "YamlWidget_allOf" : {
+        "properties" : {
+          "type" : {
+            "description" : "This describes how this widget should be rendered. The \"type\" should be equivalent to the Object definition's name of the widget you are trying to render.",
+            "type" : "string"
+          },
+          "displayName" : {
+            "description" : "A human-readable display name, usually used to title a widget",
+            "type" : "string"
+          },
+          "providers" : {
+            "items" : {
+              "$ref" : "./schemas/provider.yml#/Provider"
+            },
+            "type" : "array"
+          },
+          "children" : {
+            "items" : {
+              "$ref" : "#/components/schemas/YamlWidget"
+            },
+            "type" : "array"
+          },
+          "displayOptions" : {
+            "$ref" : "#/components/schemas/YamlWidget_allOf_displayOptions"
+          },
+          "description" : {
+            "type" : "string"
+          }
+        },
+        "required" : [ "displayName", "type" ],
+        "type" : "object",
+        "example" : null
+      },
+      "Config_Console" : {
+        "properties" : {
+          "name" : {
+            "type" : "string"
+          },
+          "providers" : {
+            "additionalProperties" : {
+              "$ref" : "./schemas/yaml-provider.yml#/YamlProvider"
+            },
+            "type" : "object"
+          },
+          "dependencies" : {
+            "additionalProperties" : {
+              "type" : "string"
+            },
+            "type" : "object"
+          },
+          "dashboards" : {
+            "additionalProperties" : {
+              "$ref" : "./schemas/yaml-dashboard.yml#/YamlDashboard"
+            },
+            "type" : "object"
+          },
+          "widgets" : {
+            "additionalProperties" : {
+              "$ref" : "./schemas/yaml-widget.yml#/YamlWidget"
+            },
+            "type" : "object"
+          }
+        },
+        "required" : [ "name" ],
+        "type" : "object"
+      }
+    },
+    "securitySchemes" : {
+      "bearerAuth" : {
+        "bearerFormat" : "JWT",
+        "scheme" : "bearer",
+        "type" : "http"
+      },
+      "apiKeyAuth" : {
+        "description" : "JWT token",
+        "in" : "header",
+        "name" : "authorization",
+        "type" : "apiKey"
+      }
+    }
+  }
+}
