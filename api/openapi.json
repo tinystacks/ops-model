@@ -6,7 +6,8 @@
     "version" : "1.0"
   },
   "servers" : [ {
-    "url" : "/"
+    "description" : "prod",
+    "url" : "https://api.tinystacks.com"
   } ],
   "paths" : {
     "/ping" : {
