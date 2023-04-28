@@ -1,32 +1,42 @@
-YamlConsole:
-  description: A console is a top-level construct that defines all  
-  type: object
-  properties:
-    name:
-      description: a human-readable name for your console.
-      type: string
-    dashboards:
+---
+openapi: 3.0.0
+info:
+  title: todo
+  description: todo
+  version: 1.0.120
+paths: {}
+components:
+  schemas:
+    YamlConsole:
+      description: A console is a top-level construct that defines all  
       type: object
-      additionalProperties:
-        $ref: './yaml-dashboard.yml#/YamlDashboard'
-    widgets:
-      type: object
-      additionalProperties:
-        $ref: './yaml-widget.yml#/YamlWidget'
-    providers:
-      type: object
-      additionalProperties:
-        $ref: './yaml-provider.yml#/YamlProvider'
-    dependencies:
-      type: object
-      additionalProperties:
-        type: string
-    constants:
-      type: object
-      additionalProperties:
-        $ref: './constant.yml#/Constant'
-  required:
-    - name
-    - dashboards
-    - providers
-    - widgets
+      properties:
+        name:
+          description: a human-readable name for your console.
+          type: string
+        dashboards:
+          type: object
+          additionalProperties:
+            $ref: yaml-dashboard.yml#/components/schemas/YamlDashboard
+        widgets:
+          type: object
+          additionalProperties:
+            $ref: yaml-widget.yml#/components/schemas/YamlWidget
+        providers:
+          type: object
+          additionalProperties:
+            $ref: yaml-provider.yml#/components/schemas/YamlProvider
+        dependencies:
+          type: object
+          additionalProperties:
+            type: string
+        constants:
+          type: object
+          additionalProperties:
+            $ref: constant.yml#/components/schemas/Constant
+        additionalProperties: {}
+      required:
+        - name
+        - dashboards
+        - providers
+        - widgets

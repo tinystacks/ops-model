@@ -8,7 +8,7 @@ Console:
     dashboards:
       type: object
       additionalProperties:
-        $ref: './dashboard.yml#/Dashboard'
+        $ref: './dashboard.yml#/components/schemas/Dashboard'
     widgets:
       type: object
       additionalProperties:
@@ -16,7 +16,7 @@ Console:
     providers:
       type: object
       additionalProperties:
-        $ref: './provider.yml#/Provider'
+        $ref: ./provider.yml#/components/schemas/Provider
     dependencies:
       type: object
       additionalProperties:
@@ -24,8 +24,7 @@ Console:
     constants:
       type: object
       additionalProperties:
-        $ref: './constant.yml#/Constant'
-
+        $ref: './constant.yml#/components/schemas/Constant'
   required:
     - name
     - dashboards

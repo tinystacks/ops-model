@@ -1,20 +1,29 @@
-Dashboard:
-  type: object
-  properties:
-    id: 
-      type: string
-    widgetIds: 
-      type: array
-      items: 
-        type: string
-    route:
-      description: A URL-safe route where this dashboard can be accessed
-      type: string
-    parameters:
-      description: runtime parameters that can be assigned a value via a query param in the url
-      type: array
-      items:
-        $ref: './parameter.yml#/Parameter'
-  required:
-    - route
-    - id
+---
+openapi: 3.0.0
+info:
+  title: todo
+  description: todo
+  version: 1.0.120
+paths: {}
+components:
+  schemas:
+    Dashboard:
+      type: object
+      properties:
+        id: 
+          type: string
+        widgetIds: 
+          type: array
+          items: 
+            type: string
+        route:
+          description: A URL-safe route where this dashboard can be accessed
+          type: string
+        parameters:
+          description: runtime parameters that can be assigned a value via a query param in the url
+          type: array
+          items:
+            $ref: './parameter.yml#/components/schemas/Parameter'
+      required:
+        - route
+        - id

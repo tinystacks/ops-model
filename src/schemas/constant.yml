@@ -1,20 +1,29 @@
-Constant:
-  type: object
-  properties:
-    value:
-      type: string
-      description: the value for this constant
-    type:
-      type: string
-      description: the type for this constant
-      enum:
-        - string
-        - number
-        - boolean
-        - date
-      default: string
-    description:
-      type: string
-      description: description of this constant
-  required:
-    - value
+---
+openapi: 3.0.0
+info:
+  title: todo
+  description: todo
+  version: 1.0.120
+paths: {}
+components:
+  schemas:
+    Constant:
+      type: object
+      properties:
+        value:
+          type: string
+          description: the value for this constant
+        type:
+          type: string
+          description: the type for this constant
+          enum:
+            - string
+            - number
+            - boolean
+            - date
+          default: string
+        description:
+          type: string
+          description: description of this constant
+      required:
+        - value

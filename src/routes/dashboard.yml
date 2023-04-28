@@ -20,7 +20,7 @@ dashboards:
             schema:
               type: array
               items:
-                $ref: '../schemas/dashboard.yml#/Dashboard'
+                $ref: '../schemas/dashboard.yml#/components/schemas/Dashboard'
       default:
         $ref: '../shared-responses/index.yml#/TinyStacksError'
   post:
@@ -40,14 +40,14 @@ dashboards:
       content:
         application/json:
           schema:
-            $ref: '../schemas/dashboard.yml#/Dashboard'
+            $ref: '../schemas/dashboard.yml#/components/schemas/Dashboard'
     responses:
       '200':
         description: the new Dashboard
         content:
           application/json:
             schema:
-              $ref: '../schemas/dashboard.yml#/Dashboard'
+              $ref: '../schemas/dashboard.yml#/components/schemas/Dashboard'
       default:
         $ref: '../shared-responses/index.yml#/TinyStacksError'
 dashboard:
@@ -69,14 +69,14 @@ dashboard:
       content:
         application/json:
           schema:
-            $ref: '../schemas/dashboard.yml#/Dashboard'
+            $ref: '../schemas/dashboard.yml#/components/schemas/Dashboard'
     responses:
       '200':
         description: the updated Dashboard
         content:
           application/json:
             schema:
-              $ref: '../schemas/dashboard.yml#/Dashboard'
+              $ref: '../schemas/dashboard.yml#/components/schemas/Dashboard'
       default:
         $ref: '../shared-responses/index.yml#/TinyStacksError'
   delete:
@@ -98,6 +98,6 @@ dashboard:
         content:
           application/json:
             schema:
-              $ref: '../schemas/dashboard.yml#/Dashboard'
+              $ref: '../schemas/dashboard.yml#/components/schemas/Dashboard'
       default:
         $ref: '../shared-responses/index.yml#/TinyStacksError'

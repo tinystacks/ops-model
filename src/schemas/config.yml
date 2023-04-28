@@ -1,29 +1,34 @@
-Config:
-  type: object
-  properties:
-    Console: 
+---
+openapi: 3.0.0
+info:
+  title: todo
+  description: todo
+  version: 1.0.120
+paths: {}
+components:
+  schemas:
+    Config:
       type: object
       properties:
-        name:
-          type: string
-        providers:
+        console:
           type: object
-          additionalProperties:
-            $ref: './yaml-provider.yml#/YamlProvider'
-        dependencies:
-          type: object
-          additionalProperties:
-            type: string
-        dashboards:
-          type: object
-          additionalProperties:
-            $ref: './yaml-dashboard.yml#/YamlDashboard'
-        widgets:
-          type: object
-          additionalProperties:
-            $ref: './yaml-widget.yml#/YamlWidget'
-      required:
-        - name
-  required:
-    - Console
-        
+          properties:
+            name:
+              type: string
+            providers:
+              type: object
+              additionalProperties:
+                $ref: './yaml-provider.yml#/components/schemas/YamlProvider'
+            dependencies:
+              type: object
+              additionalProperties:
+                type: string
+            dashboards:
+              type: object
+              additionalProperties:
+                $ref: './yaml-dashboard.yml#/components/schemas/YamlDashboard'
+            widgets:
+              type: object
+              additionalProperties:
+                $ref: './yaml-widget.yml#/components/schemas/YamlWidget'
+            
