@@ -1,6 +1,9 @@
 YamlDashboard:
   type: object
   properties:
+    description:
+      description: a description of the dashboard
+      type: string
     route:
       type: string
     widgets:
