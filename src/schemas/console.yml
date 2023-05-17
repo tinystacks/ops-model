@@ -5,6 +5,9 @@ Console:
     name:
       description: a human-readable name for your console.
       type: string
+    repository:
+      description: The github repository url to use as a source of truth for this console when hosted
+      type: string
     dashboards:
       type: object
       additionalProperties:

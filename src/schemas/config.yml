@@ -6,6 +6,9 @@ Config:
       properties:
         name:
           type: string
+        repository:
+          description: The github repository url to use as a source of truth for this console when hosted
+          type: string
         providers:
           type: object
           additionalProperties:
@@ -22,6 +25,10 @@ Config:
           type: object
           additionalProperties:
             $ref: './yaml-widget.yml#/YamlWidget'
+        constants:
+          type: object
+          additionalProperties:
+            $ref: './constant.yml#/Constant'
       required:
         - name
   required:
