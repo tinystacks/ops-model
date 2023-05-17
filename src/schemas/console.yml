@@ -8,6 +8,7 @@ Console:
     repository:
       description: The github repository url to use as a source of truth for this console when hosted
       type: string
+      example: https://github.com/myorg/my-repo.git
     dashboards:
       type: object
       additionalProperties:
