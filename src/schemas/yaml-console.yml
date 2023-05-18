@@ -11,11 +11,9 @@ YamlConsole:
         url:
           description: The github repository url to use as a source of truth for this console when hosted
           type: string
-          example: https://github.com/myorg/my-repo.git
         branch:
           description: The name of the branch within the repository to use as the source of truth for this console when hosted.
           type: string
-          example: main
     dashboards:
       type: object
       additionalProperties:
