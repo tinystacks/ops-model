@@ -6,3 +6,4 @@ openapitools.json
 api/.openapi*
 api/.openapi*/**
 api/README.md
+test.ts

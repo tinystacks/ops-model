@@ -5,6 +5,18 @@ YamlConsole:
     name:
       description: a human-readable name for your console.
       type: string
+    repository:
+      type: object
+      properties:
+        url:
+          description: The github repository url to use as a source of truth for this console when hosted
+          type: string
+        branch:
+          description: The name of the branch within the repository to use as the source of truth for this console when hosted.
+          type: string
+        configFile:
+          description: The relative file path of the main config file within the repository.
+          type: string
     dashboards:
       type: object
       additionalProperties:

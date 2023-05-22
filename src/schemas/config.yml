@@ -6,6 +6,18 @@ Config:
       properties:
         name:
           type: string
+        repository:
+          type: object
+          properties:
+            url:
+              description: The github repository url to use as a source of truth for this console when hosted
+              type: string
+            branch:
+              description: The name of the branch within the repository to use as the source of truth for this console when hosted.
+              type: string
+            configFile:
+              description: The relative file path of the main config file within the repository.
+              type: string
         providers:
           type: object
           additionalProperties:
@@ -22,6 +34,10 @@ Config:
           type: object
           additionalProperties:
             $ref: './yaml-widget.yml#/YamlWidget'
+        constants:
+          type: object
+          additionalProperties:
+            $ref: './constant.yml#/Constant'
       required:
         - name
   required:
