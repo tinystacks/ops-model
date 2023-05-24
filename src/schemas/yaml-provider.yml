@@ -1,10 +1,13 @@
 YamlProvider:
-  type: object
-  properties:
-    id:
-      type: string
-    type: 
-      type: string
-      description: This describes how type of the provider
-  required:
-    - type
+  allOf:
+  - type: object
+    properties:
+      id:
+        type: string
+      type: 
+        type: string
+        description: This describes how type of the provider
+    required:
+      - type
+  - type: object
+    additionalProperties: {}

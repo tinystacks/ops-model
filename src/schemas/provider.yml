@@ -6,6 +6,7 @@ Provider:
     type: 
       type: string
       description: This describes the type of the provider
+    additionalProperties: {}
   required:
     - type
     - id
