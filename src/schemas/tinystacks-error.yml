@@ -10,6 +10,10 @@ TinyStacksError:
       type: number
     stack:
       type: string
+    cause:
+      type: string
+    context:
+      type: string
     type:
       $ref: '#/TinyStacksErrorTypeEnum'
 TinyStacksErrorTypeEnum:
