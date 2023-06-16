@@ -4,14 +4,37 @@ TinyStacksError:
     name:
       type: string
       default: TinyStacksError
+      description: The standard name of a TinyStacksError; always to be set to TinyStacksError.
     message:
       type: string
+      description: A concise message describing the error in more detail than the status code.
     status:
       type: number
+      description: The standard HTTP status code for the error.  Be sure to use the most specific error code possible, falling back to the X00 codes as necessary.  See https://developer.mozilla.org/en-US/docs/Web/HTTP/Status for more details.
     stack:
       type: string
+      description: The stack trace of the error.  This is typically not shown to the client, but is important for server-side logging and debugging.
+    cause:
+      type: string
+      description: Used to describe the origin of an error if that original error has meaning to the client.  This field should add specificity to 'message'.
+    fields:
+      type: object
+      description: Used to identify specific fields in a JSON body that caused the error.  Typically only used for 4xx type responses.  The key should be the json path to the invalid property and the value should be an error message specific to that property.
+      additionalProperties:
+        type: string
+    context:
+      type: string
+      description: Used to identify what part of the request caused the error for non-JSON payloads.
     type:
-      $ref: '#/TinyStacksErrorTypeEnum'
+      description: A standard error type corresponding to the textual representation of an HTTP status code.  See https://www.npmjs.com/package/http-status-codes for status codes not included in our default list.
+      anyOf:
+        - $ref: '#/TinyStacksErrorTypeEnum'
+        - type: string
+  required:
+    - name
+    - message
+    - status
+    - type
 TinyStacksErrorTypeEnum:
   type: string
   enum:
