@@ -20,13 +20,11 @@
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "openapi-typescript-codegen": "^0.23.0"
-  },
   "devDependencies": {
     "@openapitools/openapi-generator-cli": "^2.6.0",
     "js-yaml": "^4.1.0",
     "json-refs": "^3.0.15",
+    "openapi-typescript-codegen": "^0.24.0",
     "typescript": "^4.9.4"
   }
 }
